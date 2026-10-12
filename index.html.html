@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Medicinal Garden Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3ead8;--paper:#faf4e6;--ink:#2b2a22;--green:#1f3d2b;--sage:#6f8a5e;--clay:#c8643b;--line:#d9ccb0;--soft:#5d5a4b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#f3ead8;--paper:#faf4e6;--ink:#2b2a22;--soft:#5d5a4b}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito Sans',system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:var(--green);line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(243,234,216,.94);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+nav b{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--green)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
+nav ul a{text-decoration:none;color:var(--soft)}nav ul a:hover{color:var(--green)}
+.btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px}
+.btn:hover,.btn:focus-visible{background:#15301f}
+.btn.clay{background:var(--clay)}.btn.clay:hover{background:#a9502d}
+a:focus-visible,button:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.hero{background:linear-gradient(180deg,#e9dfc6,var(--bg));padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(42px,6vw,68px);font-weight:700}
+.hero p{font-size:18px;color:var(--soft);max-width:46ch;margin:18px 0 26px}
+.hero small{display:block;margin-top:14px;color:var(--soft)}
+.packets{display:flex;gap:14px;justify-content:center;align-items:flex-end;min-height:260px}
+.pk{width:112px;background:var(--paper);border:1px solid var(--line);padding:14px 8px;text-align:center;box-shadow:0 6px 14px rgba(60,45,20,.12);border-radius:3px}
+.pk i{display:block;font-style:normal;font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;color:var(--green);font-size:15px;margin-top:6px}
+.pk:nth-child(1){transform:rotate(-4deg)}.pk:nth-child(2){height:190px;transform:translateY(-10px)}.pk:nth-child(3){transform:rotate(4deg)}
+.pk svg{width:56px;height:56px}
+.badges{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;padding:6px 20px 0}
+.badges span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-size:14px;font-weight:600;color:var(--green)}
+section{padding:68px 0}
+h2{font-size:clamp(32px,4.5vw,46px);margin-bottom:10px}
+.lead{color:var(--soft);max-width:58ch;margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 14px;text-align:center}
+.card svg{width:54px;height:54px}
+.card h3{font-size:22px;margin:6px 0 4px}
+.card p{font-size:13px;color:var(--soft);margin:0}
+.incl .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:28px}
+.box ul{list-style:none;margin:14px 0 0;padding:0}
+.box li{padding:12px 0;border-top:1px solid var(--line);display:flex;gap:12px}
+.box li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--sage);margin-top:8px}
+.learn{background:var(--clay);color:#fff}
+.learn h2{color:#fff}.learn .lead{color:#fbe8dd}
+.learn .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.learn .item{background:rgba(255,255,255,.14);border-radius:10px;padding:22px}
+.learn h3{color:#fff;font-size:25px;margin-bottom:6px}.learn p{margin:0;color:#fff2ea}
+.faq details{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:600;color:var(--green)}
+.faq p{margin:10px 0 0;color:var(--soft)}
+.note{background:#ece3cc;border-left:4px solid var(--sage);padding:18px 22px;border-radius:6px;font-size:14px;color:var(--soft);margin-top:34px}
+.cta{text-align:center;background:var(--green);color:#f3ead8}
+.cta h2{color:#f3ead8}.cta p{max-width:48ch;margin:0 auto 24px;color:#d6d9c4}
+footer{padding:26px 0;text-align:center;font-size:13px;color:var(--soft)}
+@media(max-width:860px){.hero .wrap,.incl .wrap,.learn .two{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}nav ul{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Medicinal Garden Kit</b>
+<ul><li><a href="#plants">The Plants</a></li><li><a href="#included">What's Included</a></li><li><a href="#learn">How It Works</a></li><li><a href="#faq">FAQ</a></li></ul>
+<a class="btn" href="https://medicinalseedkit.com/kit/#aff=Lovelyzindagi" target="_blank" rel="noopener sponsored">Explore the Kit</a></div></nav>
+
+<header class="hero"><div class="wrap">
+<div><h1>Grow a Garden Rooted in Nature</h1>
+<p>A thoughtfully curated 10-herb seed collection for gardeners who want to grow, explore, and learn from traditional herbal gardening.</p>
+<a class="btn" href="#plants">Discover What's Inside</a><small>Start small. Grow with intention.</small></div>
+<div class="packets" aria-hidden="true">
+<div class="pk"><svg viewBox="0 0 60 60"><g fill="#8a6fb0"><circle cx="30" cy="12" r="5"/><circle cx="30" cy="24" r="5"/><circle cx="30" cy="36" r="5"/></g><path d="M30 40v18" stroke="#6f8a5e" stroke-width="3"/></svg><i>Lavender</i></div>
+<div class="pk"><svg viewBox="0 0 60 60"><g fill="#f1f1e6" stroke="#c9b97a"><ellipse cx="30" cy="12" rx="5" ry="9"/><ellipse cx="30" cy="48" rx="5" ry="9" transform="rotate(180 30 30)"/><ellipse cx="12" cy="30" rx="9" ry="5"/><ellipse cx="48" cy="30" rx="9" ry="5"/></g><circle cx="30" cy="30" r="6" fill="#e3b72f"/></svg><i>Chamomile</i></div>
+<div class="pk"><svg viewBox="0 0 60 60"><g fill="#c76ea0"><ellipse cx="30" cy="12" rx="5" ry="10"/><ellipse cx="14" cy="26" rx="10" ry="5" transform="rotate(-20 14 26)"/><ellipse cx="46" cy="26" rx="10" ry="5" transform="rotate(20 46 26)"/></g><circle cx="30" cy="28" r="7" fill="#7a4a2b"/></svg><i>Echinacea</i></div>
+</div></div>
+<div class="badges" style="margin-top:36px"><span>10 herb varieties</span><span>Beginner-friendly growing guide</span><span>3 digital guides included</span></div>
+</header>
+
+<section id="plants"><div class="wrap">
+<h2>Meet Your Growing Collection</h2>
+<p class="lead">Ten distinctive herbs and flowers, selected to make learning, planting, and tending feel approachable.</p>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section class="incl" id="included"><div class="wrap">
+<div><h2>Everything You Need to Begin</h2>
+<p class="lead">A basic starting substitute for guessing at home: seeds paired with guides that walk you through each growing stage, from sowing to harvest.</p>
+<a class="btn clay" href="https://medicinalseedkit.com/kit/#aff=Lovelyzindagi" target="_blank" rel="noopener sponsored">Get the Kit</a></div>
+<div class="box"><h3 style="font-size:28px">In the kit</h3>
+<ul><li><span><b>10 seed packets</b><br>One for each herb in the collection.</span></li>
+<li><span><b>From Seeds to Remedies</b><br>A beginner-friendly growing guide, with sowing, care, and harvest notes.</span></li>
+<li><span><b>3 digital guides</b><br>Delivered instantly so you can start reading today.</span></li></ul></div>
+</div></section>
+
+<section class="learn" id="learn"><div class="wrap">
+<h2>More Ways to Learn</h2>
+<p class="lead">Your guides go beyond the garden bed.</p>
+<div class="two">
+<div class="item"><h3>Healing Yourself at Home with Household Items</h3><p>A practical educational guide to exploring traditional household remedies at home.</p></div>
+<div class="item"><h3>Wild Edible &amp; Medicinal Herbs</h3><p>Learn to recognize and appreciate common wild plants, with careful identification tips.</p></div>
+</div></div></section>
+
+<section class="faq" id="faq"><div class="wrap" style="max-width:760px">
+<h2>Questions, answered</h2><p class="lead">The basics, before you begin.</p>
+<details><summary>Is this kit good for beginners?</summary><p>Yes. The growing guide explains each step in plain language, so you can start with no experience.</p></details>
+<details><summary>What do I get after purchase?</summary><p>The 10-herb seed collection plus 3 digital guides. The guides are available to read right away.</p></details>
+<details><summary>Can I use the herbs as medicine?</summary><p>The kit is educational. It is not a substitute for professional medical advice, so check with a qualified healthcare professional before using any herb.</p></details>
+<div class="note"><b>Note:</b> Plant identification, preparation, and use require care and reliable guidance. Herbs are not a substitute for professional medical advice. Seek advice from a qualified healthcare professional before using herbs, especially if pregnant, nursing, taking medication, or managing a health condition.</div>
+</div></section>
+
+<section class="cta" id="get"><div class="wrap">
+<h2>Start small. Grow with intention.</h2>
+<p>Get your 10-herb seed collection and the guides that show you how to grow it.</p>
+<a class="btn clay" href="https://medicinalseedkit.com/kit/#aff=Lovelyzindagi" target="_blank" rel="noopener sponsored">Get the Medicinal Garden Kit</a>
+</div></section>
+<footer>Disclosure: this page contains an affiliate link. If you buy through it, I may earn a commission at no extra cost to you. Educational use only.</footer>
+
+<script>
+var herbs=[["Chicory","A resilient, adaptable plant with blue flowers and a long taproot.","#6f8fd0"],["Yarrow","Hardy, feathery foliage with flat clusters of tiny blooms.","#efe6c8"],["California Poppy","Bright, silky orange flowers that thrive in sunny spots.","#f08a24"],["Marshmallow","A tall, soft, old-fashioned plant with gentle pink blooms.","#e6b3c2"],["Chamomile","Daisy-like flowers with a calming, apple-sweet scent.","#f4f1e4"],["Evening Primrose","A fragrant, easy-going plant with yellow flowers that open at dusk.","#e8cf3a"],["Lavender","Fragrant purple spikes that pollinators love.","#8a6fb0"],["Echinacea","A long-blooming coneflower with a bold, spiky center.","#c76ea0"],["Calendula","Cheerful orange blooms, easy to sow and quick to flower.","#f2992e"],["Feverfew","Small daisy-like flowers on a compact, bushy plant.","#f1efe0"]];
+var g=document.getElementById('grid');
+herbs.forEach(function(h){var c=document.createElement('div');c.className='card';
+c.innerHTML='<svg viewBox="0 0 60 60" aria-hidden="true"><path d="M30 58V32" stroke="#6f8a5e" stroke-width="3"/><path d="M30 46c-8-2-12-6-13-11 8 0 12 4 13 11z" fill="#8fa874"/><g fill="'+h[2]+'" stroke="#00000022"><ellipse cx="30" cy="12" rx="6" ry="10"/><ellipse cx="18" cy="20" rx="6" ry="10" transform="rotate(-50 18 20)"/><ellipse cx="42" cy="20" rx="6" ry="10" transform="rotate(50 42 20)"/><ellipse cx="22" cy="30" rx="6" ry="9" transform="rotate(-100 22 30)"/><ellipse cx="38" cy="30" rx="6" ry="9" transform="rotate(100 38 30)"/></g><circle cx="30" cy="24" r="5" fill="#d9a441"/></svg><h3></h3><p></p>';
+c.querySelector('h3').textContent=h[0];c.querySelector('p').textContent=h[1];g.appendChild(c)});
+</script>
+</body>
+</html>
